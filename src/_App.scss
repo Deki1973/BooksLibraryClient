@@ -1,0 +1,13 @@
+@import "@style/Navbar.scss";
+@import "@style/_SingleBook.scss";
+@import "@style/Search";
+
+$fontColorBookCard:"#8f6419";
+
+#main{
+  width: 100%;
+  min-height: 100vh;
+  transition: background-color 0.25s;
+
+  
+}

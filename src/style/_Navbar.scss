@@ -1,0 +1,77 @@
+
+.navbar{
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    background-color: blueviolet;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 5%;
+
+    .links{
+        display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+    width: fit-content;
+
+    a {
+        color: white;
+        text-decoration: none;
+        font-size: 1.2rem;
+        &:hover{
+            color:rgba(255, 208, 0, 0.507);
+        }
+
+    }
+   
+    }
+    button{
+        border-radius: 100%;
+        background-color: transparent;
+        border:none;
+        outline: none;
+        color:white;
+        
+        img{
+            width: 2.5rem;
+            background-color: rgb(217, 205, 223);
+            padding: 0.25rem;
+            height: auto;
+            cursor: pointer;
+            border-radius: 50%;
+            
+        }
+        
+    } 
+    
+
+}
+
+#main > div.cl-rootBox.cl-signIn-root.🔒️.cl-internal-phfxlr, div.cl-rootBox.cl-signUp-root.🔒️.cl-internal-phfxlr{
+    width: 100%;
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+}
+
+
+@media  screen and (max-width:400px) {
+  .navbar{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    
+    .links{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+  }  
+}

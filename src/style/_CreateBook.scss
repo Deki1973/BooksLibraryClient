@@ -1,0 +1,76 @@
+
+.add-form{
+    width: 100%;
+   
+    display: flex;
+    flex-direction: column;
+    padding-left: 35%;
+    font-size: 1.5em;
+   
+    
+}
+.create-book{
+
+   
+    width: 100%;
+    height: 90vh;
+   
+    display: flex;
+    flex-direction: column;
+    padding-top: 5rem;
+    
+    
+    gap: 10px;
+    
+    input{
+        margin: 0.5rem auto;
+        
+        width: 50%;
+        height: auto;
+        font-size: 1rem;
+        padding: 0.5rem;
+        font-size: 0.75em;
+        font-weight: 600;
+
+    }
+    textarea{
+        width: 50%;
+        font-size: 0.75em;
+        font-weight: 600;
+        padding: 1em;
+    }
+    textarea:focus{
+        background-color: rgba(255,255,0,0.425);
+    }
+    input:focus{
+        background-color:rgba(255, 255, 0, 0.425);
+    }
+   
+
+}
+.buttons-create{    
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+
+    
+    
+    
+
+//background-color: aliceblue;
+    
+    button{
+    cursor: pointer;
+        width: 150px;
+        height: 50px;
+    
+        border-radius: 5px;
+        box-shadow: inset;
+    
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        font-weight: 600;
+    }
+    button:hover{
+        border-color: aqua;
+    }
+}

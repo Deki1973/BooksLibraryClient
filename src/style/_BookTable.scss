@@ -1,0 +1,31 @@
+.books-table{
+    width: 100%;
+    //background-color: coral;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-top: 3vh;
+    gap:5vh;
+    
+}
+
+@media screen and (max-width:400px){
+    
+    .main{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        
+    }
+    .books-table{
+        display: flex;
+        flex-direction: column;  
+        align-items: center;
+
+        
+        
+        
+    }
+    
+}
