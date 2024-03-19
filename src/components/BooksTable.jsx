@@ -76,7 +76,7 @@ const onKeyDown=(e)=>{
     </div>
     
     <div className="books-table">
-      
+      {!books && <div><h1>Molim sacekajte...</h1></div>}
       
       {books
         ? books.slice(0,displayCount).filter((item)=>handleFilter(item)).map((item, idx) => {

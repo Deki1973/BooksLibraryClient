@@ -7,6 +7,8 @@ const ThemeContext = createContext(null);
 
 const backgroundColorLightTheme="hsla(38, 70%, 84%, 1)";
 const backgroundColorDarkTheme="hsla(271, 53%, 19%, 1)";
+const fontColorLightTheme="hsla(42, 100%, 13%, 1)";
+const fontColorDarkTheme="hsla(42, 100%, 50%, 1)";
 
 export const useTheme = () => {
   return useContext(ThemeContext);
@@ -16,12 +18,12 @@ export const ThemeProvider = ({ children }) => {
   const themes = {
     dark: {
       name:"dark",
-      color:"#8f6419",
+      color:fontColorDarkTheme,
       backgroundColor: backgroundColorDarkTheme,
     },
     light: {
       name:"light",
-      color: "black",
+      color: fontColorLightTheme,
       backgroundColor:backgroundColorLightTheme,
       
       

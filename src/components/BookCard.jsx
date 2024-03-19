@@ -17,11 +17,9 @@ const BookCard = ({ _id, title, author, description, image }) => {
   };
   return (
     <div className="book-card-container">
+      <img src={image} alt="cover" onClick={handleClick} loading="lazy" />
       <h1>{title}</h1>
       <h3>{author}</h3>
-      <img src={image} alt="cover" onClick={handleClick} loading="lazy" />
-      <br />
-      <hr />
     </div>
   );
 };
