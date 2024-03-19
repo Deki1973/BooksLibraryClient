@@ -39,12 +39,10 @@
         font-weight: 600;
         padding: 1em;
     }
-    textarea:focus{
-        background-color: rgba(255,255,0,0.425);
+    input:focus, textarea:focus{
+        background-color: rgb(255, 255, 162);
     }
-    input:focus{
-        background-color:rgba(255, 255, 0, 0.425);
-    }
+    
    
 
 }
