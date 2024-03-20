@@ -1,14 +1,13 @@
-
 import { useEffect, useState } from "react";
 import BookCard from "./BookCard";
 //
 import "@style/_BookTable.scss";
 import { useBooks } from "@context/BooksContext";
 import Search from "@components/Search";
+//
+import Loading from "../assets/loading.svg";
 
 const BooksTable = () => {
-
-
   // infinite scroll
 
   // ovde sam imao problem. ako je sirina kartica za knjigu bila takva da se iscrtaju tri elementa u redu
@@ -17,9 +16,9 @@ const BooksTable = () => {
   // prevario sam logiku ga tako sto sam u useState() stavio 4 umesto originalnog 3
   //
   const [displayCount, setDisplayCount] = useState(4);
-  const {books}=useBooks();
-  const [search, setSearch]=useState("");
-  const [isSearched,setIsSearched]=useState(false);
+  const { books } = useBooks();
+  const [search, setSearch] = useState("");
+  const [isSearched, setIsSearched] = useState(false);
 
   // infinite scroll
   const handleScroll = () => {
@@ -37,64 +36,74 @@ const BooksTable = () => {
   });
 
   console.log(search);
-  var searchFilter="";
-  const handleFilter=(item)=>{
-    const lowerCaseTitle=item.title.toLowerCase();
-    const lowerCaseSearch=search.toLowerCase();
-    if(isSearched==true){
+  var searchFilter = "";
+  const handleFilter = (item) => {
+    const lowerCaseTitle = item.title.toLowerCase();
+    const lowerCaseSearch = search.toLowerCase();
+    if (isSearched == true) {
       return lowerCaseTitle.includes(lowerCaseSearch);
-    }else{
+    } else {
       return lowerCaseTitle.includes("");
-      
     }
-  }
+  };
 
-const handleOnChange=(e)=>{
-  setIsSearched(false);
-  setSearch(e.target.value);
-  console.log(e.target.value);
-  
-}
+  const handleOnChange = (e) => {
+    setIsSearched(false);
+    setSearch(e.target.value);
+    console.log(e.target.value);
+  };
 
-const handleSearch=()=>{
-  setIsSearched(true);
-}
+  const handleSearch = () => {
+    setIsSearched(true);
+  };
 
-const onKeyDown=(e)=>{
-  console.log(e.keyCode);
-  if (e.keyCode==13){
-    console.log("ENTER");
-    handleSearch();
-  }
-}
+  const onKeyDown = (e) => {
+    console.log(e.keyCode);
+    if (e.keyCode == 13) {
+      console.log("ENTER");
+      handleSearch();
+    }
+  };
   // rendering
   return (
     <div className="main">
-    
-    <div className="search-container">
-    <Search value={search} onChange={(e)=>{handleOnChange(e)}} handleSearch={handleSearch} onKeyDown={(e)=>{onKeyDown(e);}} className="search-box" />
+      <div className="search-container">
+        <Search
+          value={search}
+          onChange={(e) => {
+            handleOnChange(e);
+          }}
+          handleSearch={handleSearch}
+          onKeyDown={(e) => {
+            onKeyDown(e);
+          }}
+          className="search-box"
+        />
+      </div>
+
+      <div className="books-table">
+        {!books && <div className="timer-container"><img src={Loading} alt="Molim sacekajte..." /></div>}
+
+        {books
+          ? books
+              .slice(0, displayCount)
+              .filter((item) => handleFilter(item))
+              .map((item, idx) => {
+                return (
+                  <div key={idx} className="book-card">
+                    <BookCard
+                      _id={item._id}
+                      title={item.title}
+                      author={item.author}
+                      description={item.description}
+                      image={item.image}
+                    />
+                  </div>
+                );
+              })
+          : null}
+      </div>
     </div>
-    
-    <div className="books-table">
-      {!books && <div><h1>Molim sacekajte...</h1></div>}
-      
-      {books
-        ? books.slice(0,displayCount).filter((item)=>handleFilter(item)).map((item, idx) => {
-            return (
-              <div key={idx} className="book-card">
-                <BookCard
-                  _id={item._id}
-                  title={item.title}
-                  author={item.author}
-                  description={item.description}
-                  image={item.image}
-                />
-              </div>
-            );
-          })
-        : null}
-        </div>
-        </div>
   );
 };
 

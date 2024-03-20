@@ -8,6 +8,13 @@
     gap:5vh;
     
 }
+.timer-container{
+    background-color:transparent;
+    animation: rotation 10s infinite;
+}
+@keyframes rotation{
+    100%{transform: rotate(360deg);}
+}
 
 @media screen and (max-width:400px){
     
