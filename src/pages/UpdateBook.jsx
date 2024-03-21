@@ -9,7 +9,6 @@ import "@style/_UpdateBook.scss";
 const UpdateBook = () => {
   let { id } = useParams();
   const { books } = useBooks();
-  
 
   const navigate = useNavigate();
   const [title, setTitle] = useState("");
@@ -17,9 +16,7 @@ const UpdateBook = () => {
   const [description, setDescription] = useState("");
   const [image, setImage] = useState("");
 
-  const { handleBooksChange} = useBooks();
-
-
+  const { handleBooksChange } = useBooks();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -35,11 +32,12 @@ const UpdateBook = () => {
     try {
       const res = await axios({
         method: "patch",
-        url: `http://localhost:5000/books/${id}`,
+        //url: `http://localhost:5000/books/${id}`,
+        url: `https://bookslibraryserver-production.up.railway.app/books/${id}`,
         data: updatedBook,
       });
 
-      if(res.status==200){
+      if (res.status == 200) {
         alert(res.data.message);
         handleBooksChange();
         navigate("/");

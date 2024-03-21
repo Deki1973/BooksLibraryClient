@@ -22,7 +22,8 @@ export const BooksProvider = ({ children }) => {
   useEffect(() => {
     async function getAllBooks() {
       try {
-        const response = await axios.get("http://localhost:5000/books");
+        //const response = await axios.get("http://localhost:5000/books");
+        const response=await axios.get("https://bookslibraryserver-production.up.railway.app/books");
         //console.log(response.data);
         setBooks(response.data);
       } catch (error) {

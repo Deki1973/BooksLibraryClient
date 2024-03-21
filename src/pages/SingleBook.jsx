@@ -11,7 +11,6 @@ const SingleBook = () => {
   const navigate = useNavigate();
   //
   const { isSignedIn } = useSession();
-  
 
   const handleDelete1 = async (id) => {
     console.log("brisanje knjige ciji je id: " + id);
@@ -20,7 +19,10 @@ const SingleBook = () => {
       true
     ) {
       try {
-        const res = await axios.delete(`http://localhost:5000/books/${id}`);
+        //const res = await axios.delete(`http://localhost:5000/books/${id}`);
+        const res = await axios.delete(
+          `https://bookslibraryserver-production.up.railway.app/books/${id}`
+        );
         console.log(res);
         if (res.status == 200) {
           alert("The book has been deleted.");
@@ -58,7 +60,10 @@ const SingleBook = () => {
               <p>{item.description}</p>
 
               {/*<div className={`buttons`} style={{ display:isSignedIn==true?"flex":"none"}}>*/}
-              <div className={`buttons`} style={{display: isSignedIn==true?"flex":"none"}}>
+              <div
+                className={`buttons`}
+                style={{ display: isSignedIn == true ? "flex" : "none" }}
+              >
                 <button
                   onClick={() => {
                     handleDelete1(id);
@@ -74,7 +79,6 @@ const SingleBook = () => {
                 >
                   Izmeni
                 </button>
-              
               </div>
             </div>
           );
