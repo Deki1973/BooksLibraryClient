@@ -6,15 +6,15 @@
     justify-content: center;
     align-items: center;
     
-    input{
-        width: 30em;
-        height: 5em;
-        
-        
+    form{
+        input{
+            font-weight: 900;
+        }
     }
     button{
         cursor: pointer;
         width: 10em;
         height: 3em;
+       
     }
 }
