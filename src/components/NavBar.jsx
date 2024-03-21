@@ -29,6 +29,7 @@ const NavBar = () => {
           Pocetna
         </Link>
         <Link to="/books/create">Dodaj knjigu</Link>
+        <Link to="books/find">Nadji naslov</Link>
         <div className="sign-links">
         <Link to="/sign-in">Uloguj se</Link>
         <Link to="/sign-up">Registruj se</Link>

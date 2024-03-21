@@ -6,6 +6,7 @@ import { ThemeProvider } from "./context/ThemeContext.jsx";
 import { BooksProvider } from "./context/BooksContext.jsx";
 // 17.03.2024
 import { ClerkProvider } from "@clerk/clerk-react";
+import { SingleBookProvider } from "./context/SingleBookContext.jsx";
 
 // Import your publishable key 17.03.2024
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
@@ -17,11 +18,13 @@ if (!PUBLISHABLE_KEY) {
 ReactDOM.createRoot(document.getElementById("root")).render(
   <Router>
     <ClerkProvider publishableKey={PUBLISHABLE_KEY}>
+      <SingleBookProvider>
       <BooksProvider>
         <ThemeProvider>
           <App />
         </ThemeProvider>
       </BooksProvider>
+      </SingleBookProvider>
     </ClerkProvider>
   </Router>
 );
