@@ -22,7 +22,7 @@
     a {
         color: white;
         text-decoration: none;
-        font-size: 1.2rem;
+        font-size: 1.2em;
         &:hover{
             color:rgba(255, 208, 0, 0.507);
         }
@@ -55,7 +55,6 @@
 #main > div.cl-rootBox.cl-signIn-root.🔒️.cl-internal-phfxlr, div.cl-rootBox.cl-signUp-root.🔒️.cl-internal-phfxlr{
     padding-top: 5em;
     width: 100%;
-    //background-color: aqua;
     display: flex;
     justify-content: center;
     

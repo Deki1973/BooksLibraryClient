@@ -1,20 +1,41 @@
+
 .find-book-container{
-    
+    padding-top: 2em;
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    
-    form{
-        input{
-            font-weight: 900;
-        }
-    }
-    button{
-        cursor: pointer;
-        width: 10em;
-        height: 3em;
-       
-    }
+    gap: 1em;    
+   
 }
+/*
+    .book-title{
+    background-color: aquamarine;
+    width: 30em;
+    height: 4em;
+    padding: 1em;
+    font-size: 1em;
+    font-weight: 900;
+    
+    
+}*/
+
+.find-book-form{
+display: flex;
+gap:0.25em
+
+}
+.book-title{
+    width: 15rem;
+    font-size: 1rem;
+    font-weight: 900;
+}
+#main > div.find-book-container > form > button{
+  width: 5rem;
+  font-weight: 900;
+  border-radius: 5px;
+}
+#main > div.find-book-container > form > button:hover{
+    cursor: pointer;
+    border-color: aqua;
+  }

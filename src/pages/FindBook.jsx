@@ -24,7 +24,7 @@ const FindBook = () => {
   return (
     <div className="find-book-container">
       <h1>Nadji knjigu po naslovu</h1>
-      <form action="submit" onSubmit={handleSubmit}>
+      <form action="submit" onSubmit={handleSubmit} className="find-book-form">
         <input
           type="text"
           id="bookTitle"
@@ -34,7 +34,7 @@ const FindBook = () => {
             setText(e.target.value);
           }}
         />
-        <button type="submit">NADJI</button>
+        <button type="submit" className="button-find">NADJI</button>
       </form>
       {singleBook != null && (
         <div className="book-card">

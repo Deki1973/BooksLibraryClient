@@ -68,6 +68,7 @@ const BooksTable = () => {
   return (
     <div className="main">
       <div className="search-container">
+      {/*
         <Search
           value={search}
           onChange={(e) => {
@@ -79,6 +80,7 @@ const BooksTable = () => {
           }}
           className="search-box"
         />
+        */}
       </div>
 
       <div className="books-table">
