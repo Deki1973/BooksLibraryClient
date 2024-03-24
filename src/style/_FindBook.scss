@@ -8,27 +8,17 @@
     gap: 1em;    
    
 }
-/*
-    .book-title{
-    background-color: aquamarine;
-    width: 30em;
-    height: 4em;
-    padding: 1em;
-    font-size: 1em;
-    font-weight: 900;
-    
-    
-}*/
 
-.find-book-form{
+.find-book-form{  
 display: flex;
 gap:0.25em
 
 }
 .book-title{
     width: 15rem;
-    font-size: 1rem;
+    font-size: 1.25rem;
     font-weight: 900;
+    padding: 0.1em 0.5em;
 }
 #main > div.find-book-container > form > button{
   width: 5rem;

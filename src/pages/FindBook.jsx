@@ -1,5 +1,4 @@
 import "@style/_FindBook.scss";
-import axios from "axios";
 import { useEffect, useState } from "react";
 import { useSingleBook } from "../context/SingleBookContext";
 import BookCard from "../components/BookCard";
@@ -34,7 +33,9 @@ const FindBook = () => {
             setText(e.target.value);
           }}
         />
-        <button type="submit" className="button-find">NADJI</button>
+        <button type="submit" className="button-find">
+          NADJI
+        </button>
       </form>
       {singleBook != null && (
         <div className="book-card">
@@ -47,6 +48,7 @@ const FindBook = () => {
           />
         </div>
       )}
+     
     </div>
   );
 };
