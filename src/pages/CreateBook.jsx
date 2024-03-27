@@ -45,13 +45,6 @@ const CreateBook = () => {
     }
   };
 
-  /*
-useEffect(
-  ()=>{
-    console.log(title);
-  },[title]
-);
-*/
   return (
     <div className="create-book">
       <div className="add-form">

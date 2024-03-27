@@ -1,26 +1,15 @@
 import { useEffect, useState } from "react";
 import BookCard from "./BookCard";
-//
 import "@style/_BookTable.scss";
 import { useBooks } from "@context/BooksContext";
-import Search from "@components/Search";
-//
-import Loading from "../assets/loading.svg";
+import Loading from "@assets/loading.svg";
 
 const BooksTable = () => {
-  // infinite scroll
-
-  // ovde sam imao problem. ako je sirina kartica za knjigu bila takva da se iscrtaju tri elementa u redu
-  // ne bi se pojavio vertikalni scrollbar.
-  // eksperimentisanje sa scroll-y i poodesavanjem visine tabele za kartice i visine samih kartica za knjige nije dalo pozeljne rezultate
-  // prevario sam logiku ga tako sto sam u useState() stavio 4 umesto originalnog 3
-  //
   const [displayCount, setDisplayCount] = useState(4);
   const { books } = useBooks();
   const [search, setSearch] = useState("");
   const [isSearched, setIsSearched] = useState(false);
 
-  // infinite scroll
   const handleScroll = () => {
     if (
       window.innerHeight + document.documentElement.scrollTop >
@@ -35,8 +24,6 @@ const BooksTable = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   });
 
-  console.log(search);
-  var searchFilter = "";
   const handleFilter = (item) => {
     const lowerCaseTitle = item.title.toLowerCase();
     const lowerCaseSearch = search.toLowerCase();
@@ -47,44 +34,14 @@ const BooksTable = () => {
     }
   };
 
-  const handleOnChange = (e) => {
-    setIsSearched(false);
-    setSearch(e.target.value);
-    console.log(e.target.value);
-  };
-
-  const handleSearch = () => {
-    setIsSearched(true);
-  };
-
-  const onKeyDown = (e) => {
-    console.log(e.keyCode);
-    if (e.keyCode == 13) {
-      console.log("ENTER");
-      handleSearch();
-    }
-  };
-  // rendering
   return (
     <div className="main">
-      <div className="search-container">
-      {/*
-        <Search
-          value={search}
-          onChange={(e) => {
-            handleOnChange(e);
-          }}
-          handleSearch={handleSearch}
-          onKeyDown={(e) => {
-            onKeyDown(e);
-          }}
-          className="search-box"
-        />
-        */}
-      </div>
-
       <div className="books-table">
-        {!books && <div className="timer-container"><img src={Loading} alt="Molim sacekajte..." /></div>}
+        {!books && (
+          <div className="timer-container">
+            <img src={Loading} alt="Molim sacekajte..." />
+          </div>
+        )}
 
         {books
           ? books

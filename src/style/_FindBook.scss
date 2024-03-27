@@ -1,31 +1,28 @@
-
-.find-book-container{
-    padding-top: 2em;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1em;    
-   
+.find-book-container {
+  padding-top: 2em;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
 }
 
-.find-book-form{  
-display: flex;
-gap:0.25em
-
+.find-book-form {
+  display: flex;
+  gap: 0.25em;
 }
-.book-title{
-    width: 15rem;
-    font-size: 1.25rem;
-    font-weight: 900;
-    padding: 0.1em 0.5em;
+.book-title {
+  width: 15rem;
+  font-size: 1.25rem;
+  font-weight: 900;
+  padding: 0.1em 0.5em;
 }
-#main > div.find-book-container > form > button{
+#main > div.find-book-container > form > button {
   width: 5rem;
   font-weight: 900;
   border-radius: 5px;
 }
-#main > div.find-book-container > form > button:hover{
-    cursor: pointer;
-    border-color: aqua;
-  }
+#main > div.find-book-container > form > button:hover {
+  cursor: pointer;
+  border-color: aqua;
+}

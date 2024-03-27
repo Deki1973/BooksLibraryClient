@@ -59,7 +59,6 @@ const SingleBook = () => {
               <img src={item.image} alt={item.title} />
               <p>{item.description}</p>
 
-              {/*<div className={`buttons`} style={{ display:isSignedIn==true?"flex":"none"}}>*/}
               <div
                 className={`buttons`}
                 style={{ display: isSignedIn == true ? "flex" : "none" }}

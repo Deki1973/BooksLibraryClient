@@ -1,26 +1,22 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Goudy+Bookletter+1911&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Goudy+Bookletter+1911&display=swap");
 
 @import "./_App.scss";
 
-
-*{
-padding: 0;
-margin:0;
-box-sizing: border-box;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-:root{
+:root {
   width: 100%;
-
 }
 
-html{
+html {
   font-family: "Goudy Bookletter 1911", serif;
   font-weight: 400;
   font-style: normal;
 }
 
-@media screen and (max-width:500){
-  
+@media screen and (max-width: 500) {
 }

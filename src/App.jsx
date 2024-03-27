@@ -54,7 +54,6 @@ const App = () => {
           }
         />
         <Route path="/books/singleBook/" element={<SingleBook />} />
-
         <Route path="/books/find/" element={<FindBook />} />
         <Route path="/sign-in" element={<SignIn afterSignInUrl="/" />} />
         <Route path="/sign-up" element={<SignUp afterSignUpUrl="/" />} />

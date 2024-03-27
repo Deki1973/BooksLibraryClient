@@ -7,23 +7,22 @@ export const useBooks = () => {
   return useContext(BooksContext);
 };
 
-
-
 export const BooksProvider = ({ children }) => {
   const [books, setBooks] = useState(null);
   // da korisnike ne mora da rucno refresnuje stranicu nakon dodavanje knjige
   // ako je dodata nova knjiga ili obrisana postojeca:
   const [isChanged, setIsChanged] = useState(false);
-  const handleBooksChange=()=>{
+  const handleBooksChange = () => {
     setIsChanged(!isChanged);
-
-  }
+  };
 
   useEffect(() => {
     async function getAllBooks() {
       try {
         //const response = await axios.get("http://localhost:5000/books");
-        const response=await axios.get("https://bookslibraryserver-production.up.railway.app/books");
+        const response = await axios.get(
+          "https://bookslibraryserver-production.up.railway.app/books"
+        );
         //console.log(response.data);
         setBooks(response.data);
       } catch (error) {
@@ -34,9 +33,7 @@ export const BooksProvider = ({ children }) => {
   }, [isChanged]);
 
   return (
-    <BooksContext.Provider
-      value={{ books, handleBooksChange }}
-    >
+    <BooksContext.Provider value={{ books, handleBooksChange }}>
       {children}
     </BooksContext.Provider>
   );

@@ -9,8 +9,6 @@ import { useBooks } from "@context/BooksContext";
 //
 import { UserButton, useUser } from "@clerk/clerk-react";
 
-
-
 const NavBar = () => {
   const { theme, changeTheme } = useTheme();
   const { setIsFormSubmitted } = useBooks();
@@ -19,8 +17,7 @@ const NavBar = () => {
     setIsFormSubmitted(false);
   };
 
-  const {user}=useUser();
-
+  const { user } = useUser();
 
   return (
     <div className="navbar">
@@ -31,12 +28,12 @@ const NavBar = () => {
         <Link to="/books/create">Dodaj knjigu</Link>
         <Link to="books/find">Nadji naslov</Link>
         <div className="sign-links">
-        <Link to="/sign-in">Uloguj se</Link>
-        <Link to="/sign-up">Registruj se</Link>
+          <Link to="/sign-in">Uloguj se</Link>
+          <Link to="/sign-up">Registruj se</Link>
         </div>
       </div>
       {user && <p>Prijavljeni ste kao: {user?.fullName}</p>}
-      
+
       <UserButton afterSignOutUrl="/" />
 
       <button onClick={changeTheme}>

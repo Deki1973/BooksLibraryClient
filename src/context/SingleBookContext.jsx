@@ -7,32 +7,22 @@ export const useSingleBook = () => {
   return useContext(SingleBookContext);
 };
 
-
-
 export const SingleBookProvider = ({ children }) => {
   const [singleBook, setSingleBook] = useState(null);
-  // da korisnike ne mora da rucno refresnuje stranicu nakon dodavanje knjige
-  // ako je dodata nova knjiga ili obrisana postojeca:
- 
- 
-  const [titleInput, setTitleInput]=useState("");
+  const [titleInput, setTitleInput] = useState("");
 
   useEffect(() => {
     async function getSingleBook() {
       try {
-
-        if (titleInput!=""){
-        const res = await axios(
-          {
+        if (titleInput != "") {
+          const res = await axios({
             method: "post",
             //url:  "http://localhost:5000/books/find",
             url: "https://bookslibraryserver-production.up.railway.app/books/find",
-            data:{title:titleInput}
-          }
-        );
-        setSingleBook(res.data);
+            data: { title: titleInput },
+          });
+          setSingleBook(res.data);
         }
-        
       } catch (error) {
         console.log(error);
       }
@@ -41,9 +31,7 @@ export const SingleBookProvider = ({ children }) => {
   }, [titleInput]);
 
   return (
-    <SingleBookContext.Provider
-      value={{singleBook,setTitleInput }}
-    >
+    <SingleBookContext.Provider value={{ singleBook, setTitleInput }}>
       {children}
     </SingleBookContext.Provider>
   );

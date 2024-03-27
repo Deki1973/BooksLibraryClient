@@ -48,7 +48,6 @@ const FindBook = () => {
           />
         </div>
       )}
-     
     </div>
   );
 };
