@@ -16,7 +16,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    gap: 5px;
+    gap: 1rem;
     width: fit-content;
     a {
       color: white;
@@ -180,6 +180,11 @@ div.cl-rootBox.cl-signUp-root.🔒️.cl-internal-phfxlr {
   background-color: rgb(247, 208, 158);
 }
 
+.sign-links {
+  display: flex;
+  gap: 1rem;
+}
+
 @media screen and (max-width: 400px) {
   .navbar {
     width: 100%;
@@ -194,7 +199,4 @@ div.cl-rootBox.cl-signUp-root.🔒️.cl-internal-phfxlr {
   }
 }
 
-.sign-links {
-  display: flex;
-  gap: 0.5em;
-}
+
